@@ -57,6 +57,8 @@ rss: rss
 # - username: jekyll2
 #   instance: example.com
 
+sass:
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
