@@ -1,0 +1,33 @@
+<nav>
+    <h1 class="title is-4">dimensi <br> gagas prima</h1>
+    <a id="home-link" href="/">Home</a>
+    <a id="about-link" href="/about">Company</a>
+    <a id="service-link" href="/service">Service</a>
+    <a id="project-link" href="/project">Projects</a>
+    <a id="blog-link" href="/blog">Blog</a>
+    <a id="career-link" href="/career">Career</a>
+    <a id="contact-link" href="/contact">Contact</a>
+    <div class="social-media">
+        <a href="">
+            <i class="fab fa-facebook-square"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+    <div class="subtitle">Copyright 2019 Dimensi.co</div>
+</nav>
+<script>
+    let { pathname } = document.location
+    console.log(pathname)
+    console.log(pathname)
+    if (pathname === '/') {
+        document.getElementById("home-link").classList.add("is-active")
+    } else {
+        pathname = pathname.replace("/", "")
+        document.getElementById(`${pathname}-link`).classList.add("is-active")
+    }
+</script>

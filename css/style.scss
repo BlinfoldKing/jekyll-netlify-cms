@@ -2,11 +2,25 @@
 # Front matter comment to ensure Jekyll properly reads file. 
 --- 
 
+body {
+    margin: 0;
+    padding: 0;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
 * {
 	font-family: 'Nunito', sans-serif;
 }
 
 $primary: #f7941c;
+
+a {
+	text-decoration: none;
+	&:not(nav) {
+		color: $primary;
+	}
+}
 
 #container {
 	width: 100vw;
@@ -136,4 +150,36 @@ $primary: #f7941c;
             }
         }
     }
+}
+
+#contact {
+	margin: auto;
+	text-align: center;
+	padding: 50px 100px;
+	h2 {
+        width: fit-content;
+        text-align: center;
+        margin: 0 auto;
+        display: block;
+		color: #000;
+        border-bottom: solid 3px $primary;
+        margin-bottom: 50px;
+        margin-top: 60px;
+ 
+	}
+
+	.contact {
+		display: flex;
+		justify-content: center;
+		.contact-button {
+			margin: 0 10px;
+			background: $primary;
+			color: white;
+			padding: 5px;
+		}
+	}
+
+	iframe {
+		margin: auto;
+	}
 }
