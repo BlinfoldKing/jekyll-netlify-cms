@@ -1,0 +1,10 @@
+collections:
+    - name: "posts"
+      label: "Posts"
+      folder: "_posts"
+      create: true
+      fields:
+        - {label: "Title", name: "title", widget: "string"}
+        - {label: "Thumbnail", name: "thumbnail", widget: "image"}
+        - {label: "Body", name: "body", widget: "markdown"}
+        - {label: "Categories", name: "category", widget: "category"}
