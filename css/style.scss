@@ -1,12 +1,10 @@
---- 
-# Front matter comment to ensure Jekyll properly reads file. 
---- 
-
+---
+---
 body {
-    margin: 0;
-    padding: 0;
-    max-height: 100vh;
-    overflow: hidden;
+	margin: 0;
+	padding: 0;
+	max-height: 100vh;
+	overflow: auto;
 }
 
 * {
@@ -49,19 +47,19 @@ a {
 		}
 
 		.social-media {
-            margin-top: 100px;
+			margin-top: 100px;
 			a {
 				display: inline;
-                color: black;
-                margin-right: 10px;
+				color: black;
+				margin-right: 10px;
 			}
-        }
-        
-        .subtitle {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #c4c4c4;
-        }
+		}
+
+		.subtitle {
+			margin-top: 10px;
+			font-size: 14px;
+			color: #c4c4c4;
+		}
 	}
 
 	#body {
@@ -83,6 +81,8 @@ a {
 #home {
 	display: flex;
 	flex-direction: row;
+	max-height: 100vh;
+	overflow: hidden;
 	.images {
 		height: calc(100vh - 66px);
 		display: flex;
@@ -114,42 +114,42 @@ a {
 #company {
 	padding: 100px;
 
-    p {
-        display: block;
-        margin: 0 auto;
-        width: 900px;
-        max-width: 900px;
-        span {
-            background-color: $primary;
-            color: white;
-        }
-    }
+	p {
+		display: block;
+		margin: 0 auto;
+		width: 900px;
+		max-width: 900px;
+		span {
+			background-color: $primary;
+			color: white;
+		}
+	}
 
 	h2 {
-        width: fit-content;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
+		width: fit-content;
+		text-align: center;
+		margin: 0 auto;
+		display: block;
 		color: #000;
-        border-bottom: solid 3px $primary;
-        margin-bottom: 50px;
-        margin-top: 60px;
-    }
-    
-    .images {
-        max-width: 900px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        text-align: center;
-        align-items: flex-start;
-        .company-icon {
-            div {
-                width: 100px;
-                font-size: 12px;
-            }
-        }
-    }
+		border-bottom: solid 3px $primary;
+		margin-bottom: 50px;
+		margin-top: 60px;
+	}
+
+	.images {
+		max-width: 900px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-around;
+		text-align: center;
+		align-items: flex-start;
+		.company-icon {
+			div {
+				width: 100px;
+				font-size: 12px;
+			}
+		}
+	}
 }
 
 #contact {
@@ -157,15 +157,14 @@ a {
 	text-align: center;
 	padding: 50px 100px;
 	h2 {
-        width: fit-content;
-        text-align: center;
-        margin: 0 auto;
-        display: block;
+		width: fit-content;
+		text-align: center;
+		margin: 0 auto;
+		display: block;
 		color: #000;
-        border-bottom: solid 3px $primary;
-        margin-bottom: 50px;
-        margin-top: 60px;
- 
+		border-bottom: solid 3px $primary;
+		margin-bottom: 50px;
+		margin-top: 60px;
 	}
 
 	.contact {
@@ -181,5 +180,63 @@ a {
 
 	iframe {
 		margin: auto;
+	}
+}
+
+#project {
+	margin: auto;
+	text-align: center;
+	padding: 0px 100px;
+	width: fit-content;
+	h2 {
+		width: fit-content;
+		text-align: center;
+		margin: 0 auto;
+		display: block;
+		color: #000;
+		border-bottom: solid 3px $primary;
+		margin-bottom: 50px;
+		margin-top: 60px;
+	}
+
+	.featured {
+		display: flex;
+		flex-direction: row;
+		.project-card {
+			text-align: left;
+			padding: 30px;
+		}
+	}
+
+	.clients {
+		p {
+			margin: auto;
+		}
+		p.logos {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-evenly;
+			align-items: center;
+			img {
+				display: block;
+			}
+		}
+	}
+
+	.other {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.other-button {
+			margin-left: 10px;
+			div	{
+				margin-left: 5px;
+			}
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			border: solid 2px $primary;
+			padding: 10px;
+		}
 	}
 }
