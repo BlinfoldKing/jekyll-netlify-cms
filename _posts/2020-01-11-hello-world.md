@@ -1,5 +1,5 @@
 ---
-layout: /img/uploads/career-1.png
+layout: post
 title: Hello World
 thumbnail: /img/uploads/career-1.png
 ---
