@@ -1,5 +1,5 @@
 ---
---- 
+---
 body {
 	margin: 0;
 	padding: 0;
@@ -270,6 +270,57 @@ a {
 			border: solid 1px #c4c4c4;
 			div {
 				padding: 30px;
+			}
+		}
+	}
+}
+
+#career {
+	.content {
+		margin: auto;
+		text-align: center;
+		padding: 0px 100px;
+		width: fit-content;
+		h2 {
+			width: fit-content;
+			text-align: center;
+			margin: 0 auto;
+			display: block;
+			color: #000;
+			border-bottom: solid 3px $primary;
+			margin-bottom: 50px;
+			margin-top: 60px;
+		}
+	}
+
+	.career {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		.description {
+			border: solid 1px #c4c4c4;
+			padding: 30px;
+			width: 300px;
+			text-align: left;
+			.email {
+				color: white;
+				vertical-align: middle;
+				background: $primary;
+				padding: 3px;
+				display: block;
+				width: fit-content;
+				margin: 30px 0;
+			}
+			h3,
+			p {
+				color: #7a7a7a;
+			}
+		}
+		.image {
+			display: flex;
+			flex-direction: column;
+			img {
+				display: block;
 			}
 		}
 	}
