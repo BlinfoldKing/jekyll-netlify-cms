@@ -1,5 +1,5 @@
 ---
----
+--- 
 body {
 	margin: 0;
 	padding: 0;
@@ -229,7 +229,7 @@ a {
 		justify-content: center;
 		.other-button {
 			margin-left: 10px;
-			div	{
+			div {
 				margin-left: 5px;
 			}
 			display: flex;
@@ -237,6 +237,40 @@ a {
 			align-items: center;
 			border: solid 2px $primary;
 			padding: 10px;
+		}
+	}
+}
+
+#service {
+	.content {
+		margin: auto;
+		text-align: center;
+		padding: 0px 100px;
+		width: fit-content;
+		h2 {
+			width: fit-content;
+			text-align: center;
+			margin: 0 auto;
+			display: block;
+			color: #000;
+			border-bottom: solid 3px $primary;
+			margin-bottom: 50px;
+			margin-top: 60px;
+		}
+	}
+	.featured {
+		margin: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		.project-card {
+			margin: 15px;
+			max-width: 256px;
+			text-align: left;
+			border: solid 1px #c4c4c4;
+			div {
+				padding: 30px;
+			}
 		}
 	}
 }
