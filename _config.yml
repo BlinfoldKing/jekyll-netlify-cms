@@ -22,9 +22,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 collections:
-  posts:
-    label: "Posts"
-    name: "posts"
+  test:
+    label: "test"
+    name: "test"
     folder: "_posts"
     create: true
     fields:
