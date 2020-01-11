@@ -72,3 +72,7 @@ sass:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+paginate: 6
+paginate_path: "/blog/page:num/"
+permalink: "blog/post/:year/:month/:day/:title:output_ext"

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div id="posts">
+    <h2 class="title is-2">
+        {{page.title}}
+    </h2>
+    <div class="subtitle">
+        {{page.categories[0]}} | {{page.date | split: " " | first}}
+    </div>
+    <img src="{{page.thumbnail}}" alt="">
+    <div class="content">
+        {{content}}
+    </div>
+</div>

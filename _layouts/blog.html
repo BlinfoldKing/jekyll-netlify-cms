@@ -1,33 +1,84 @@
 ---
 layout: default
 ---
-<div id="contact">
+<div id="blog">
     <p class="text">
-        <h2 class="title is-5">Contact</h2>
+        <h2 class="title is-5">Blog</h2>
         <p>
-
-            Reach us through
+            Our recent update about interior design topic
         </p>
     </p>
     {%- if site.posts.size > 0 -%}
-    <ul class="post-list">
-        {%- for post in site.posts -%}
-        <li>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <h3>
-                <a class="post-link" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
-                    {{ post.excerpt }}
-                </a>
-            </h3>
-            {%- if site.show_excerpts -%}
-            {{ post.excerpt }}
-            {%- endif -%}
-        </li>
-        {%- endfor -%}
-    </ul>
+    <ol class="post-list">
+        <div class="row">
+            {% for post in site.posts limit: 2 %}
+            <li>
+                <div>
+                    {{forloop.index}}.
+                </div>
+                <img src="{{post.thumbnail}}" alt="">
+                <div>
+                    <a class="post-link" href="{{ post.url }}">
+                        {{ post.categories[0] | escape }}
+                    </a>
+                    <a class="post-link title" href="{{ post.url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </div>
 
+            </li>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for post in site.posts limit: 2 %}
+            <li>
+                <div>
+                    {{forloop.index | plus: 2}}.
+                </div>
+                <img src="{{post.thumbnail}}" alt="">
+                <div>
+                    <a class="post-link" href="{{ post.url }}">
+                        {{ post.categories[0] | escape }}
+                    </a>
+                    <a class="post-link title" href="{{ post.url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </div>
+
+            </li>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for post in site.posts limit: 2 %}
+            <li>
+                <div>
+                    {{forloop.index | plus: 4}}.
+                </div>
+                <img src="{{post.thumbnail}}" alt="">
+                <div>
+                    <a class="post-link" href="{{ post.url }}">
+                        {{ post.categories[0] | escape }}
+                    </a>
+                    <a class="post-link title" href="{{ post.url }}">
+                        {{ post.title | escape }}
+                    </a>
+                </div>
+
+            </li>
+            {% endfor %}
+        </div>
+    </ol>
+    <div class="pagination">
+        <a href="{{'/blog/page' | append: paginator.prev_page}}"> <i class="fas fa-arrow-left"></i> </a>
+        {% for i in (1..paginator.total_pages) %}
+        {% if i == paginator.page %}
+        <a href="{{'/blog/page' | append: i}}" class="is-active"> {{i}} </a>
+        {% else %}
+        <a href="{{'/blog/page' | append: i}}"> {{i}} </a>
+        {% endif%}
+        {% endfor %}
+        <a href="{{'/blog/page' | append: paginator.next_page}}"> <i class="fas fa-arrow-right"></i> </a>
+    </div>
     {%- endif -%}
 
 </div>
