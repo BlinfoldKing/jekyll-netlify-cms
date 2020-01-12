@@ -29,7 +29,7 @@ layout: default
             </li>
             {% endfor %}
         </div>
-        {% if paginator.posts.length > 2 %}
+        {% if paginator.total_posts > 2 %}
         <div class="row">
             {% for post in paginator.posts limit: 2 offset: 2 %}
             <li>
@@ -50,7 +50,7 @@ layout: default
             {% endfor %}
         </div>
         {% endif %}
-        {% if paginator.posts.length > 4 %}
+        {% if paginator.total_posts > 4 %}
         <div class="row">
             {% for post in paginator.posts limit: 2 offset: 4 %}
             <li>
