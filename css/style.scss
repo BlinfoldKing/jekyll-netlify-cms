@@ -1,5 +1,5 @@
----
----
+--- 
+--- 
 body {
 	margin: 0;
 	padding: 0;
@@ -24,6 +24,9 @@ a {
 	display: flex;
 	flex-direction: row;
 	nav {
+		@media (max-width: 1200px) {
+			display: none;
+		}
 		h1 {
 			margin-bottom: 50px;
 		}
@@ -81,6 +84,14 @@ a {
 	flex-direction: row;
 	max-height: 100vh;
 	overflow: hidden;
+	@media (max-width: 768px) {
+		padding: 10vw;
+		flex-direction: column;	
+		.text {
+			margin-top: 30px;
+		}
+		width: 100vw;
+	}
 	.images {
 		height: calc(100vh - 66px);
 		display: flex;
@@ -91,6 +102,20 @@ a {
 		img {
 			display: block;
 			width: 130px;
+		}
+		@media (max-width: 768px) {
+			flex-direction: row;	
+			height: fit-content;
+			margin: 0;
+			margin-top: 60px;
+			width: 200px;
+			overflow: scroll;
+
+			img {
+				margin-right: 10px;
+			}
+
+			padding: 30 0px;
 		}
 	}
 	.text {
@@ -106,11 +131,27 @@ a {
 			width: 600px;
 			font-size: 18px;
 		}
+		@media (max-width: 768px) {
+			margin-top: 0px;
+			p  {
+				max-width: 250px;
+				text-align: justify;
+				font-size: 14px;
+			}
+		}
 	}
 }
 
 #company {
-	padding: 100px;
+	padding: 10vh;
+
+	@media (max-width: 768px) {
+		margin: auto;
+		width: 100vw;
+		padding: 0;		
+	}
+
+	widows: 100vw;
 
 	p {
 		display: block;
@@ -120,6 +161,12 @@ a {
 		span {
 			background-color: $primary;
 			color: white;
+		}
+
+		@media (max-width: 768px) {
+			max-width: 250px;
+			font-size: 14px;	
+			text-align: justify;
 		}
 	}
 
@@ -141,6 +188,10 @@ a {
 		justify-content: space-around;
 		text-align: center;
 		align-items: flex-start;
+		flex-wrap: wrap;
+		@media (max-width: 768px) {
+			max-width: 200px;	
+		}
 		.company-icon {
 			div {
 				width: 100px;
@@ -186,6 +237,9 @@ a {
 	text-align: center;
 	padding: 0px 100px;
 	width: fit-content;
+	@media (max-width: 768px) {
+		padding: 0;
+	}
 	h2 {
 		width: fit-content;
 		text-align: center;
@@ -200,6 +254,11 @@ a {
 	.featured {
 		display: flex;
 		flex-direction: row;
+		@media (max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			margin: auto;
+		}
 		.project-card {
 			text-align: left;
 			padding: 30px;
@@ -217,6 +276,13 @@ a {
 			align-items: center;
 			img {
 				display: block;
+			}
+			@media (max-width: 768px) {
+				flex-wrap: wrap;
+				max-width: 250px;
+				img {
+					margin: 5px;
+				}
 			}
 		}
 	}
@@ -236,14 +302,30 @@ a {
 			border: solid 2px $primary;
 			padding: 10px;
 		}
+		@media (max-width: 768px) {
+			flex-direction: column;
+			span {
+				display: block;
+				margin-bottom: 15px;
+			}
+			.other-button {
+				margin-bottom: 15px;
+			}
+		}
 	}
 }
 
 #service {
+	@media (max-width: 1200px) {
+		margin: auto;
+		width: 100vw;
+		font-size: 14px;
+	}
+
 	.content {
 		margin: auto;
 		text-align: center;
-		padding: 0px 100px;
+		padding: 0px 10vw;
 		width: fit-content;
 		h2 {
 			width: fit-content;
@@ -261,6 +343,11 @@ a {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
+		@media (max-width: 768px) {
+			flex-direction: column;
+			align-items: center;
+			margin: auto;
+		}
 		.project-card {
 			margin: 15px;
 			max-width: 256px;
@@ -321,6 +408,24 @@ a {
 				display: block;
 			}
 		}
+
+		@media (max-width: 768px) {
+			.image {
+				display: none;
+			}
+
+			flex-direction: column;
+
+
+		}
+
+		.image-top, .image-bottom {
+			display: none;
+			@media (max-width: 768px) {
+				display: block;
+			}
+		}
+
 	}
 }
 
@@ -328,6 +433,10 @@ a {
 	margin: auto;
 	text-align: center;
 	padding: 50px 100px;
+	@media (max-width: 768px) {
+		width: 100vw;
+		padding: 0 10vw;	
+	}
 	h2 {
 		width: fit-content;
 		text-align: center;
@@ -377,6 +486,21 @@ a {
 				margin-right: 30px;
 			}
 		}
+
+		@media (max-width: 768px) {
+			.row {
+				flex-direction: column;
+				li {
+					&:last-child {
+						padding-top: 30px;
+					}
+
+				}
+			}
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
 	}
 
 	.pagination {
@@ -397,10 +521,13 @@ a {
 }
 
 #posts {
-	height:  calc(100vh - 200px);
+	height: calc(100vh - 200px);
 	overflow-y: scroll;
 	text-align: auto;
 	padding: 100px 10vw;
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
 	.title {
 		text-align: center;
 		color: white;
@@ -414,7 +541,6 @@ a {
 		text-align: center;
 		margin: 15px;
 	}
-
 
 	img {
 		display: block;
