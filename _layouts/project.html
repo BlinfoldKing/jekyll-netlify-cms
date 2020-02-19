@@ -7,19 +7,53 @@ layout: default
         <p>
             Here our collection of clients project
         </p>
-        <div class="featured">
-            <div class="project-card">
-                <img src="/assets/project-1.png" alt="">
-                <p>PT. Herbalife Indonesia - Head Office, Cibis Nine</p>
-                <a href="">Renovation Interior, Furniture & Mechanical Electrical</a>
-            </div>
-            <div class="project-card">
-                <img src="/assets/project-2.png" alt="">
-                <p>PT. Petrokopindo Cipta Selaras - Gresik, Jawa Timur</p>
-                <a href="">Renovation Interior, Furniture & Mechanical Electrical</a>
+        <div class="gallery">
+            <div class="arrow prev" id="prev" onclick="carousels[0].previous()">
+                <i class="fas fa-chevron-circle-left"></i>
             </div>
 
+            <div class="featured carousel">
+                <div class="project-card item-1">
+                    <img src="/assets/project-2.png" alt="">
+                </div>
+                <div class="project-card item-2">
+                    <img src="/assets/project-2.png" alt="">
+                </div>
+                <div class="project-card item-3">
+                    <img src="/assets/project-2.png" alt="">
+                </div>
+                <div class="project-card item-4">
+                    <img src="/assets/project-1.png" alt="">
+                </div>
+                <div class="project-card item-5">
+                    <img src="/assets/project-1.png" alt="">
+                </div>
+                <div class="project-card item-6">
+                    <img src="/assets/project-1.png" alt="">
+                </div>
+
+            </div>
+            <div class="arrow next" onclick="carousels[0].next()">
+                <i class="fas fa-chevron-circle-right"></i>
+            </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+        <script>
+            // Initialize all div with carousel class
+            var carousels = bulmaCarousel.attach('.featured', {
+                slidesToScroll: 1,
+                slidesToShow: 2,
+                pagination: false,
+                navigation: false
+            });
+
+            carousels[0].on('after:show', e => {
+                console.log(e.state.index);
+                if (e.state.index === 0) {
+                    document.getElementById("prev").classList.add("disabled")
+                }
+            });
+        </script>
 
         <div class="clients">
             <p>
@@ -33,18 +67,6 @@ layout: default
                 <img src="/assets/client-5.png" alt="">
                 <img src="/assets/client-6.png" alt="">
             </p>
-        </div>
-
-        <div class="other">
-            <span>
-                Other projects can be see here :
-            </span>
-            <div class="other-button">
-                <img src="/assets/download.png" alt="">
-                <div>
-                    Clients Project Preview
-                </div>
-            </div>
         </div>
     </p>
 </div>
