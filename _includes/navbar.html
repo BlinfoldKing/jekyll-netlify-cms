@@ -1,12 +1,12 @@
 <nav class="desktop">
     <div>
-        <img src="/assets/dimensilogo.png" alt="">
+        <img src="/assets/dimensilogo1.png" alt="" style="width: 120px;">
     </div>
-    <a id="home-link" href="/">Home</a>
-    <a id="about-link" href="/about">Company</a>
-    <a id="services-link" href="/services">Service</a>
-    <a id="project-link" href="/project">Projects</a>
-    <a id="blog-link" href="/blog">Blog</a>
+    <a id="home-link" class="home-link" href="/">Home</a>
+    <a id="about-link" class="about-link" href="/about">Company</a>
+    <a id="services-link" class="services-link" href="/services">Service</a>
+    <a id="project-link" class="project-link" href="/project">Projects</a>
+    <a id="blog-link" class="blog-link" href="/blog">Blog</a>
     <!-- <a id="career-link" href="/career">Career</a> -->
     <a id="contact-link" href="/contact">Contact</a>
     <div class="social-media">
@@ -32,7 +32,8 @@
     } else {
         pathname = pathname.replace("/", "")
         pathname = pathname.replace("/", "")
-        console.log(pathname)
+        
+        document.querySelector(`.${pathname}-link`).classList.add("is-active")
         document.getElementById(`${pathname}-link`).classList.add("is-active")
     }
 </script>

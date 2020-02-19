@@ -8,7 +8,7 @@ layout: default
             Here our collection of clients project
         </p>
         <div class="gallery">
-            <div class="arrow prev" id="prev" onclick="carousels[0].previous()">
+            <div class="arrow disabled prev" id="prev" onclick="carousels[0].previous()">
                 <i class="fas fa-chevron-circle-left"></i>
             </div>
 
@@ -33,7 +33,7 @@ layout: default
                 </div>
 
             </div>
-            <div class="arrow next" onclick="carousels[0].next()">
+            <div class="arrow next" id="next" onclick="carousels[0].next()">
                 <i class="fas fa-chevron-circle-right"></i>
             </div>
         </div>
@@ -53,9 +53,17 @@ layout: default
             });
 
             carousels[0].on('after:show', e => {
-                console.log(e.state.index);
-                if (e.state.index === 0) {
+                console.log(e);
+                if (e.next === 0) {
                     document.getElementById("prev").classList.add("disabled")
+                } else {
+                    document.getElementById("prev").classList.remove("disabled")
+                }
+
+                if (e.next === e.length - 1) {
+                    document.getElementById("next").classList.add("disabled")
+                } else {
+                    document.getElementById("next").classList.remove("disabled")
                 }
             });
         </script>
@@ -64,14 +72,26 @@ layout: default
             <p>
                 Featured Client
             </p>
-            <p class="logos">
-                <img src="/assets/client-1.png" alt="">
-                <img src="/assets/client-2.png" alt="">
-                <img src="/assets/client-3.png" alt="">
-                <img src="/assets/client-4.png" alt="">
-                <img src="/assets/client-5.png" alt="">
-                <img src="/assets/client-6.png" alt="">
-            </p>
+            <div class="logos">
+                <div class="logo">
+                    <img src="/assets/client-1.png" alt="">
+                </div>
+                <div class="logo">
+                    <img src="/assets/client-2.png" alt="">
+                </div>
+                <div class="logo">
+                    <img src="/assets/client-3.png" alt="">
+                </div>
+                <div class="logo">
+                    <img src="/assets/client-4.png" alt="">
+                </div>
+                <div class="logo">
+                    <img src="/assets/client-5.png" alt="">
+                </div>
+                <div class="logo">
+                    <img src="/assets/client-6.png" alt="">
+                </div>
+            </div>
         </div>
     </p>
 </div>
