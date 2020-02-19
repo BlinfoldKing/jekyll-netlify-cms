@@ -40,9 +40,14 @@ layout: default
         <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
         <script>
             // Initialize all div with carousel class
+            let slidesToShow = 1
+            if (window.innerWidth >= 1200) {
+                slidesToShow = 2
+            }
+
             var carousels = bulmaCarousel.attach('.featured', {
                 slidesToScroll: 1,
-                slidesToShow: 2,
+                slidesToShow,
                 pagination: false,
                 navigation: false
             });

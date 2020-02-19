@@ -10,13 +10,58 @@
     <script src="https://identity-js.netlify.com/v1/netlify-identity-widget.js"></script>
     <meta charset="UTF-8">
     <script src="https://kit.fontawesome.com/c431cd6eb2.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
 
 </head>
 
 <body>
+    <div class="navbar-mobile">
+        <div>
+            <img src="/assets/dimensilogo.png" alt="">
+        </div>
+        <div class="menu" onclick="showSidebar()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+    <div class="sidebar-mobile disabled" id="sidebar-mobile">
+        <div class="bg" id="close-sidebar" onclick="closeSidebar()">
+        </div>
+        <div class="content">
+            <div id="close" onclick="closeSidebar()">
+                <i class="fas fa-times"></i>
+            </div>
+            <a id="home-link" href="/">Home</a>
+            <a id="about-link" href="/about">Company</a>
+            <a id="services-link" href="/services">Service</a>
+            <a id="project-link" href="/project">Projects</a>
+            <a id="blog-link" href="/blog">Blog</a>
+            <!-- <a id="career-link" href="/career">Career</a> -->
+            <a id="contact-link" href="/contact">Contact</a>
+            <div class="social-media">
+                <a href="">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+            <div class="subtitle">Copyright 2019 Dimensi.co</div>
+        </div>
+    </div>
+    <script>
+        const showSidebar = () => {
+            document.getElementById('sidebar-mobile').classList.remove("disabled")
+        }
+
+        const closeSidebar = () => {
+            document.getElementById('sidebar-mobile').classList.add("disabled")
+        }
+    </script>
     <div id="container">
         {% include navbar.html %}
         <div id="body">
