@@ -439,6 +439,12 @@ nav.desktop, .sidebar-mobile .content {
 		margin: auto;
 		overflow: hidden;
 		.slider {
+
+			.slider-item {
+				@media (max-width: 1600px) {
+					margin: 0 60px;	
+				}
+			}
 			* {
 
 				border: none  !important;
@@ -565,12 +571,18 @@ nav.desktop, .sidebar-mobile .content {
 			margin: auto;
 		}
 		.project-card {
+			img {
+				height: 200px;
+				object-fit: cover;
+				width: 100%;
+			}
 			margin: 15px;
 			max-width: 256px;
 			text-align: left;
 			border: solid 1px #c4c4c4;
 			div {
 				padding: 30px;
+				padding-top: 15px;
 			}
 		}
 	}
@@ -719,6 +731,7 @@ nav.desktop, .sidebar-mobile .content {
 			padding: 0;
 			font-size: 14px;
 		}
+
 	}
 
 	.pagination {
@@ -737,6 +750,20 @@ nav.desktop, .sidebar-mobile .content {
 				color: white;
 			}
 		}
+	}
+
+	.empty {
+		.message {
+			color: #c4c4c4;
+			margin-bottom: 20px;
+
+		}
+		margin: auto;
+		width: 30vw;
+		padding: 30px;
+		border-top: solid 1px #eee;
+		border-bottom: solid 1px #eee;
+
 	}
 }
 
