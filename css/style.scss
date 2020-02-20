@@ -57,7 +57,7 @@ $primary: #6cbd45;
 a {
 	text-decoration: none;
 	font-family: 'Nunito Light', sans-serif;
-	&:not(nav.desktop) {
+	&:not(nav) {
 		font-family: 'Nunito', sans-serif;
 		color: $primary;
 	}
@@ -239,7 +239,7 @@ nav.desktop, .sidebar-mobile .content {
 			height: 400px;
 			background:
 				linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), 
-				url('/assets/dimensibg2.png');
+				url('/assets/homedimensi.png');
 			background-size: cover;
 		}
 

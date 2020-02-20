@@ -13,9 +13,6 @@ layout: default
         <div class="row">
             {% for post in paginator.posts limit: 2 %}
             <li>
-                <div>
-                    {{forloop.index}}.
-                </div>
                 <img src="{{post.thumbnail}}" alt="">
                 <div>
                     <a class="post-link" href="{{ post.url }}">
@@ -47,6 +44,11 @@ layout: default
         </div>
         {% endif %}
     </div>
+    {%- else -%}
+    <div>
+        <h1 class="title is-1">
+            No Post Found
+        </h1>
+    </div>
     {%- endif -%}
-
 </div>
