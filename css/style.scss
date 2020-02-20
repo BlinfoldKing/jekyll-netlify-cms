@@ -670,9 +670,11 @@ nav.desktop, .sidebar-mobile .content {
 
 		}
 		li {
-			margin: auto;
-			width: 30vw;
 			padding: 30px;
+			@media (min-width: 768px) {
+				width: 30vw;
+				margin: auto;
+			}
 			border-top: solid 1px #eee;
 			display: flex;
 			flex-direction: row;
@@ -707,6 +709,7 @@ nav.desktop, .sidebar-mobile .content {
 			.row {
 				flex-direction: column;
 				li {
+					justify-content: start;
 					&:last-child {
 						padding-top: 30px;
 					}
