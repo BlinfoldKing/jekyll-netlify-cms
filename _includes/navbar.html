@@ -22,15 +22,15 @@
 
 <script>
     let { pathname } = document.location
+    
     if (pathname === '/') {
         document.getElementById("home-link").classList.add("is-active")
-    } else if(pathname.includes("blog")) {
+    } else if (pathname.includes("blog")) {
         document.getElementById(`blog-link`).classList.add("is-active")
     } else {
         pathname = pathname.replace("/", "")
         pathname = pathname.replace("/", "")
-        
-        document.querySelector(`.${pathname}-link`).classList.add("is-active")
+
         document.getElementById(`${pathname}-link`).classList.add("is-active")
     }
 </script>
