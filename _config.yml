@@ -76,3 +76,8 @@ sass:
 paginate: 2
 paginate_path: "/blog/page:num/"
 permalink: "blog/post/:year/:month/:day/:title:output_ext"
+
+collections:
+  galleries:
+    title: true
+    image: true

@@ -1,6 +1,8 @@
 ---
 layout: default
 ---
+
+>> {{ site.galleries.size }}
 <div id="project">
     <p class="text">
         <h2 class="title is-5">Projects</h2>
@@ -11,17 +13,14 @@ layout: default
             <div class="arrow disabled prev" id="prev" onclick="carousels[0].previous()">
                 <i class="fas fa-chevron-circle-left"></i>
             </div>
-
             <div class="featured carousel">
-                <div class="project-card item-1">
-                    <img src="/assets/random.png" alt="">
+
+            {% for gallery in site.galleries %}
+                <div class="project-card item-{{ forloop.index }}">
+                    <img src="{{ gallery.image }}" alt="">
                 </div>
-                <div class="project-card item-2">
-                    <img src="/assets/random1.png" alt="">
-                </div>
-                <div class="project-card item-3">
-                    <img src="/assets/random2.png" alt="">
-                </div>
+                {% endfor %}
+
             </div>
             <div class="arrow next" id="next" onclick="carousels[0].next()">
                 <i class="fas fa-chevron-circle-right"></i>
