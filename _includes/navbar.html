@@ -9,14 +9,15 @@
     <a id="blog-link" class="blog-link" href="/blog">Blog</a>
     <!-- <a id="career-link" href="/career">Career</a> -->
     <a id="contact-link" href="/contact">Contact</a>
-    <div class="social-media">
-        <a href="">
-            <i class="fab fa-facebook-square"></i>
+    <div class="languages">
+        <a href="?lang=id">
+            <img src="/assets/id.png" alt="">
         </a>
-        <a href="">
-            <i class="fab fa-instagram"></i>
+        <a href="?lang=en">
+            <img src="/assets/en.png" alt="">
         </a>
     </div>
+    <div class="social-media"></div>
     <div class="subtitle">Copyright 2019 Dimensi.co</div>
 </nav>
 
@@ -24,13 +25,16 @@
     let { pathname } = document.location
     
     if (pathname === '/') {
+        document.getElementsByClassName("home-link")[0].classList.add("is-active")
         document.getElementById("home-link").classList.add("is-active")
     } else if (pathname.includes("blog")) {
+        document.getElementsByClassName(`blog-link`)[0].classList.add("is-active")
         document.getElementById(`blog-link`).classList.add("is-active")
     } else {
         pathname = pathname.replace("/", "")
         pathname = pathname.replace("/", "")
 
+        document.getElementsByClassName(`${pathname}-link`)[0].classList.add("is-active")
         document.getElementById(`${pathname}-link`).classList.add("is-active")
     }
 </script>

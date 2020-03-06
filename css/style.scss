@@ -18,6 +18,10 @@
 	position: fixed;
 	top: calc(50vh - 170.5px);
 	right: -158.5px;
+	display: none;
+	@media (min-width: 768px){
+		display: block;	
+	}
 }
 
 .hide {
@@ -168,12 +172,21 @@ nav.desktop, .sidebar-mobile .content {
 		width: max-content;
 		&.is-active,
 		&:hover {
-			color: $primary;
+			color: $primary !important;
+		}
+	}
+
+	.languages {
+		display: flex;
+		align-items: center;
+
+		img:first-child {
+			margin-right: 10px;
 		}
 	}
 
 	.social-media {
-		margin-top: 100px;
+		margin-top: 30px;
 		a {
 			display: inline;
 			color: black;
