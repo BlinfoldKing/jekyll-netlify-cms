@@ -81,3 +81,9 @@ collections:
   galleries:
     title: true
     image: true
+  clients:
+    name: true
+    description: true
+    gallery:
+      title: true
+      image: true

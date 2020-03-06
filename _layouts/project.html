@@ -2,7 +2,6 @@
 layout: default
 ---
 
->> {{ site.galleries.size }}
 <div id="project">
     <p class="text">
         <h2 class="title is-5">Projects</h2>
@@ -15,7 +14,7 @@ layout: default
             </div>
             <div class="featured carousel">
 
-            {% for gallery in site.galleries %}
+                {% for gallery in site.galleries %}
                 <div class="project-card item-{{ forloop.index }}">
                     <img src="{{ gallery.image }}" alt="">
                 </div>
@@ -29,14 +28,13 @@ layout: default
         <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
         <script>
             // Initialize all div with carousel class
-            let slidesToShow = 1
             if (window.innerWidth >= 1200) {
                 slidesToShow = 2
             }
 
             var carousels = bulmaCarousel.attach('.featured', {
                 slidesToScroll: 1,
-                slidesToShow,
+                slidesToShow: window.innerWidth >= 1200 ? 2 :1,
                 pagination: false,
                 navigation: false
             });
@@ -62,24 +60,88 @@ layout: default
                 Featured Client
             </p>
             <div class="logos">
-                <div class="logo">
-                    <img src="/assets/client-1.png" alt="">
+                {% for client in site.clients %}
+                {%- if client.description -%}
+                <div class="logo" onclick="openModal{{forloop.index}}()">
+                        <img src="{{ client.image }}" alt="">
+                    </div>
+                {%- endif -%}
+                <script>
+                    const openModal{{forloop.index}} = () => {
+                        document.getElementById("modal-{{ forloop.index }}").classList.add("is-active")
+                    }
+
+                    const closeModal{{forloop.index}} = () => {
+                        document.getElementById("modal-{{ forloop.index }}").classList.remove("is-active")
+                    }
+                </script>
+
+                <div id="modal-{{forloop.index}}" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <div class="header">
+                            <div class="logo">
+                                <img src="{{ client.image }}" alt="">
+                            </div>
+
+                            <div class="close" onclick="closeModal{{forloop.index}}()">
+                                <i class="fas fa-times"></i>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="gallery-client">
+                                <div class="arrow disabled prev" id="prev-client"
+                                    onclick="clientCarousels{{ forloop.index }}[0].previous()">
+                                    <i class="fas fa-chevron-circle-left"></i>
+                                </div>
+                                <div class="client-{{ forloop.index }} carousel">
+
+                                    {% for gallery in client.gallery %}
+                                    <div class="project-card item-{{ forloop.index }}">
+                                        <img src="{{ gallery.image }}" alt="">
+                                    </div>
+                                    {% endfor %}
+
+                                </div>
+                                <div class="arrow next" id="next-client" onclick="clientCarousels{{ forloop.index }}[0].next()">
+                                    <i class="fas fa-chevron-circle-right"></i>
+                                </div>
+                            </div>
+                           <script>
+                                // Initialize all div with carousel class
+                                let slidesToShow  = 1
+                                var clientCarousels{{forloop.index}} = bulmaCarousel.attach('.client-{{ forloop.index }}', {
+                                    slidesToScroll: 1,
+                                    slidesToShow: 2,
+                                    pagination: false,
+                                    navigation: false
+                                });
+
+                                console.log(clientCarousels{{forloop.index}})
+
+                                clientCarousels{{forloop.index}}[0].on('after:show', e => {
+                                    console.log(e);
+                                    if (e.next === 0) {
+                                        document.getElementById("prev-client").classList.add("disabled")
+                                    } else {
+                                        document.getElementById("prev-client").classList.remove("disabled")
+                                    }
+
+                                    if (e.next === e.length - slidesToShow) {
+                                        document.getElementById("next-client").classList.add("disabled")
+                                    } else {
+                                        document.getElementById("next-client").classList.remove("disabled")
+                                    }
+                                });
+                            </script>
+
+                            <p>
+                                {{  client.description }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="logo">
-                    <img src="/assets/client-2.png" alt="">
-                </div>
-                <div class="logo">
-                    <img src="/assets/client-3.png" alt="">
-                </div>
-                <div class="logo">
-                    <img src="/assets/client-4.png" alt="">
-                </div>
-                <div class="logo">
-                    <img src="/assets/client-5.png" alt="">
-                </div>
-                <div class="logo">
-                    <img src="/assets/client-6.png" alt="">
-                </div>
+                {% endfor %}
             </div>
         </div>
     </p>
