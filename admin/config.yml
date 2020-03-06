@@ -45,12 +45,12 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
   - label: "Pages"
-  name: "pages"
-  files:
-    - label: "Home Page"
-      name: "about"
-      file: "_data/content/home.yml"
-      fields:
-        - {label: Title, name: title, widget: string}
-        - {label: Indonesia, name: indonesia, widget: markdown}
-        - {label: English, name: english, widget: markdown}
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "about"
+        file: "_data/content/home.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Indonesia, name: indonesia, widget: markdown}
+          - {label: English, name: english, widget: markdown}
