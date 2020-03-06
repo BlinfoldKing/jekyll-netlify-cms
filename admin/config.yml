@@ -44,13 +44,14 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-  - label: "Pages"
+  - label: "Page Text"
     name: "pages"
     files:
       - label: "Home Page"
         name: "about"
         file: "_data/content/home.yml"
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Indonesia, name: indonesia, widget: markdown}
-          - {label: English, name: english, widget: markdown}
+          - {label: "Title (id)", name: title_id, widget: string}
+          - {label: "Title (en)", name: title_en, widget: string}
+          - {label: "Description (id)", name: desc_id, widget: markdown}
+          - {label: "Description (en)", name: desc_en, widget: markdown}
