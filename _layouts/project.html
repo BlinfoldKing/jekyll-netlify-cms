@@ -34,7 +34,7 @@ layout: default
 
             var carousels = bulmaCarousel.attach('.featured', {
                 slidesToScroll: 1,
-                slidesToShow: window.innerWidth >= 1200 ? 2 :1,
+                slidesToShow: window.innerWidth >= 1200 ? 2 : 1,
                 pagination: false,
                 navigation: false
             });
@@ -60,18 +60,18 @@ layout: default
                 Featured Client
             </p>
             <div class="logos">
-                {% for client in site.clients %}
+                {% for client in site.clients limit: 6 offset: 0 %}
                 {%- if client.description -%}
                 <div class="logo" onclick="openModal{{forloop.index}}()">
-                        <img src="{{ client.image }}" alt="">
-                    </div>
+                    <img src="{{ client.image }}" alt="">
+                </div>
                 {%- endif -%}
                 <script>
-                    const openModal{{forloop.index}} = () => {
+                    const openModal{{ forloop.index }} = () => {
                         document.getElementById("modal-{{ forloop.index }}").classList.add("is-active")
                     }
 
-                    const closeModal{{forloop.index}} = () => {
+                    const closeModal{{ forloop.index }} = () => {
                         document.getElementById("modal-{{ forloop.index }}").classList.remove("is-active")
                     }
                 </script>
@@ -103,23 +103,24 @@ layout: default
                                     {% endfor %}
 
                                 </div>
-                                <div class="arrow next" id="next-client" onclick="clientCarousels{{ forloop.index }}[0].next()">
+                                <div class="arrow next" id="next-client"
+                                    onclick="clientCarousels{{ forloop.index }}[0].next()">
                                     <i class="fas fa-chevron-circle-right"></i>
                                 </div>
                             </div>
-                           <script>
+                            <script>
                                 // Initialize all div with carousel class
-                                let slidesToShow  = 1
-                                var clientCarousels{{forloop.index}} = bulmaCarousel.attach('.client-{{ forloop.index }}', {
+                                let slidesToShow = 1
+                                var clientCarousels{{ forloop.index }} = bulmaCarousel.attach('.client-{{ forloop.index }}', {
                                     slidesToScroll: 1,
                                     slidesToShow: 2,
                                     pagination: false,
                                     navigation: false
                                 });
 
-                                console.log(clientCarousels{{forloop.index}})
+                                console.log(clientCarousels{{ forloop.index }})
 
-                                clientCarousels{{forloop.index}}[0].on('after:show', e => {
+                                clientCarousels{ { forloop.index } } [0].on('after:show', e => {
                                     console.log(e);
                                     if (e.next === 0) {
                                         document.getElementById("prev-client").classList.add("disabled")
@@ -142,7 +143,111 @@ layout: default
                     </div>
                 </div>
                 {% endfor %}
+
             </div>
+            {%- if site.clients.size >= 7 -%}
+            <div>
+                <i id="show-more-client" onclick="showMoreClient()" class="fas fa-chevron-down"></i>
+            </div>
+            <script>
+                const showMoreClient = () => {
+                    document.getElementById("more-clients").classList.remove("hide")
+                    document.getElementById("show-more-client").classList.add("hide")
+                }
+            </script>
+            <div id="more-clients" class="hide">
+                {% assign rowcount = site.clients.size | divided_by: 6 %}
+                {% for row in (1..rowcount) %}
+                <div class="logos">
+                    {% assign offset_count = row | times: 6 %}
+                    {% for client in site.clients limit: 6 offset: offset_count %}
+                    {%- if client.description -%}
+                    <div class="logo" onclick="openModal{{forloop.index}}()">
+                        <img src="{{ client.image }}" alt="">
+                    </div>
+                    {%- endif -%}
+                    <script>
+                        const openModal{{ forloop.index }} = () => {
+                            document.getElementById("modal-{{ forloop.index }}").classList.add("is-active")
+                        }
+
+                        const closeModal{{ forloop.index }} = () => {
+                            document.getElementById("modal-{{ forloop.index }}").classList.remove("is-active")
+                        }
+                    </script>
+
+                    <div id="modal-{{forloop.index}}" class="modal">
+                        <div class="modal-background"></div>
+                        <div class="modal-content">
+                            <div class="header">
+                                <div class="logo">
+                                    <img src="{{ client.image }}" alt="">
+                                </div>
+
+                                <div class="close" onclick="closeModal{{forloop.index}}()">
+                                    <i class="fas fa-times"></i>
+                                </div>
+                            </div>
+                            <div class="content">
+                                <div class="gallery-client">
+                                    <div class="arrow disabled prev" id="prev-client"
+                                        onclick="clientCarousels{{ forloop.index }}[0].previous()">
+                                        <i class="fas fa-chevron-circle-left"></i>
+                                    </div>
+                                    <div class="client-{{ forloop.index }} carousel">
+
+                                        {% for gallery in client.gallery %}
+                                        <div class="project-card item-{{ forloop.index }}">
+                                            <img src="{{ gallery.image }}" alt="">
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+                                    <div class="arrow next" id="next-client"
+                                        onclick="clientCarousels{{ forloop.index }}[0].next()">
+                                        <i class="fas fa-chevron-circle-right"></i>
+                                    </div>
+                                </div>
+                                <script>
+                                    // Initialize all div with carousel class
+                                    let slidesToShow = 1
+                                    var clientCarousels{{ forloop.index }} = bulmaCarousel.attach('.client-{{ forloop.index }}', {
+                                        slidesToScroll: 1,
+                                        slidesToShow: 2,
+                                        pagination: false,
+                                        navigation: false
+                                    });
+
+                                    console.log(clientCarousels{{ forloop.index }})
+
+                                    clientCarousels{ { forloop.index } } [0].on('after:show', e => {
+                                        console.log(e);
+                                        if (e.next === 0) {
+                                            document.getElementById("prev-client").classList.add("disabled")
+                                        } else {
+                                            document.getElementById("prev-client").classList.remove("disabled")
+                                        }
+
+                                        if (e.next === e.length - slidesToShow) {
+                                            document.getElementById("next-client").classList.add("disabled")
+                                        } else {
+                                            document.getElementById("next-client").classList.remove("disabled")
+                                        }
+                                    });
+                                </script>
+
+                                <p>
+                                    {{  client.description }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                {% endfor %}
+            </div>
+            {%- endif -%}
         </div>
     </p>
 </div>
