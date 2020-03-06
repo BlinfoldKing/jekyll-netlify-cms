@@ -8,7 +8,9 @@
 
 
 #body {
-	margin: auto
+	@media (max-width: 768px) {
+		margin: 0px auto
+	}
 }
 
 * {
@@ -63,6 +65,7 @@
 }
 
 #home-mobile {
+	height: 100vh;
 	@media (min-width: 1200px) {
 		display: none;
 	}
@@ -87,6 +90,16 @@
 
 
 $primary: #6cbd45;
+
+#footer {
+	@media (min-width: 768px){
+		display: none;	
+	}
+	height: 20px;
+	width: 100vw;
+	background: $primary;
+	margin-top: 30px;
+}
 
 .arrow {
 	color: $primary;
@@ -220,18 +233,21 @@ nav.desktop, .sidebar-mobile .content {
 		}
 	}
 	#body {
-		width: calc(100vw - 30px);
+		min-height: 100vh;
 		position: relative;
-		footer {
-			content: "";
-			height: 46px;
-			background-color: $primary;
-			position: absolute;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			width: 100%;
+		@media (min-width: 1200px) {
+			width: calc(100vw - 276px);
 		}
+		// footer {
+		// 	content: "";
+		// 	height: 46px;
+		// 	background-color: $primary;
+		// 	position: absolute;
+		// 	right: 0;
+		// 	bottom: 0;
+		// 	left: 0;
+		// 	width: 100%;
+		// }
 	}
 }
 
