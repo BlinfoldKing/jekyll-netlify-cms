@@ -6,6 +6,11 @@
 	max-width: 100vw;
 }
 
+
+#body {
+	margin: auto
+}
+
 * {
 	box-sizing: content-box !important;
 }
@@ -85,7 +90,8 @@ $primary: #6cbd45;
 
 .arrow {
 	color: $primary;
-	font-size: 40px;
+	font-size: 24px;
+	// font-size: 40px;
 	a {
 		color: $primary !important;
 	}
@@ -556,7 +562,10 @@ nav.desktop, .sidebar-mobile .content {
 		}
 
 		div.logos {
-			margin: 30px auto;
+			margin: 0 auto;
+			@media (min-width: 768px) {
+				margin: 30px auto;
+			}
 			display: flex;
 			flex-direction: row;
 			justify-content: space-evenly;
@@ -566,7 +575,9 @@ nav.desktop, .sidebar-mobile .content {
 				align-items: center;
 				width: 120px;
 				height: 120px;
-				border: solid 1px #c4c4c4;
+				@media (min-width: 768px) {
+					border: solid 1px #c4c4c4;
+				}
 			}
 			img {
 				text-align: center;

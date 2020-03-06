@@ -78,6 +78,28 @@
             </script>
         </div>
     </div>
+    <script>
+        const { search } = document.location
+
+        console.log(search.includes("?lang=en"), search)
+        if (search.includes("?lang=en")) {
+           document.querySelectorAll(".id").forEach(elem => elem.classList.add("hide"))
+        } else {
+           document.querySelectorAll(".en").forEach(elem => elem.classList.add("hide"))
+        }
+
+
+        var changeLang = (str) => {
+            console.log(str)
+            if (str === "en") {
+            document.querySelectorAll(".id").forEach(elem => elem.classList.add("hide"))
+            document.querySelectorAll(".en").forEach(elem => elem.classList.remove("hide"))
+            } else {
+            document.querySelectorAll(".en").forEach(elem => elem.classList.add("hide"))
+            document.querySelectorAll(".id").forEach(elem => elem.classList.remove("hide"))
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -48,10 +48,16 @@ collections: # A list of collections the CMS should be able to edit
     name: "pages"
     files:
       - label: "Home Page"
-        name: "about"
-        file: "_data/content/home.yml"
+        name: "home"
+        file: "_data/home.yml"
         fields:
           - {label: "Title (id)", name: title_id, widget: string}
           - {label: "Title (en)", name: title_en, widget: string}
+          - {label: "Description (id)", name: desc_id, widget: markdown}
+          - {label: "Description (en)", name: desc_en, widget: markdown}
+      - label: "Company Page"
+        name: "company"
+        file: "_data/company.yml"
+        fields:
           - {label: "Description (id)", name: desc_id, widget: markdown}
           - {label: "Description (en)", name: desc_en, widget: markdown}

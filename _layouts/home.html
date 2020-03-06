@@ -3,7 +3,7 @@ layout: default
 ---
 
 <script>
-     document.querySelector('.circle').classList.add("hide")
+    document.querySelector('.circle').classList.add("hide")
 </script>
 
 <img src="/assets/circle.png" class="circle-home" alt="">
@@ -14,15 +14,19 @@ layout: default
 
             </div>
             <div class="desc">
-                <h1 class="title is-1">
-                    Welcome to our home
+                <h1 class="title is-1 id">
+                    {{ site.data.home.title_id }}
+                </h1>
+                <h1 class="title is-1 en">
+                    {{ site.data.home.title_en }}
                 </h1>
 
-                <p>
-                    We are committed to create the best service and provide thoroughness, integrity accountability also
-                    give
-                    quality
-                    design result for your space
+                <p class="id">
+                    {{ site.data.home.desc_id }}
+                </p>
+ 
+                <p class="en">
+                    {{ site.data.home.desc_en }}
                 </p>
             </div>
 
