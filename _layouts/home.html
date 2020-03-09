@@ -24,7 +24,7 @@ layout: default
                 <p class="id">
                     {{ site.data.home.desc_id }}
                 </p>
- 
+
                 <p class="en">
                     {{ site.data.home.desc_en }}
                 </p>
@@ -42,12 +42,18 @@ layout: default
 <div id="home-mobile">
     <div>
         <img src="/assets/home-mobile.png" alt="">
-        <h1 class="title is-1">
-            Welcome to our home,
+        <h1 class="title is-1 id">
+            {{ site.data.home.title_id }}
         </h1>
-        <p>
-            We are committed to create the best service and provide thoroughness, integrity accountability also give
-            quality design result for your space
+        <h1 class="title is-1 en">
+            {{ site.data.home.title_en }}
+        </h1>
+        <p class="id">
+            {{ site.data.home.desc_id }}
+        </p>
+
+        <p class="en">
+            {{ site.data.home.desc_en }}
         </p>
     </div>
 </div>

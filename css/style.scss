@@ -6,6 +6,7 @@
 	max-width: 100vw;
 }
 
+$primary: #6cbd45;
 
 #body {
 	@media (max-width: 768px) {
@@ -26,8 +27,13 @@
 	top: calc(50vh - 170.5px);
 	right: -158.5px;
 	display: none;
-	@media (min-width: 768px){
-		display: block;	
+	display: block;	
+	@media (max-width: 768px){
+		z-index: -2;
+		width: 250px;
+		height: 250px;
+		right: -100px;
+		top: 170px;
 	}
 }
 
@@ -65,7 +71,11 @@
 }
 
 #home-mobile {
-	height: 100vh;
+	min-height: calc(100vh - 255px);
+	img {
+		z-index: 2;
+		position: relative;
+	}
 	@media (min-width: 1200px) {
 		display: none;
 	}
@@ -73,23 +83,26 @@
 	width: 100vw;
 	text-align: center;
 	div {
+		padding: 0 10vw;
 		margin: auto;
 	}
 
 	h1 {
-		opacity: 0.64;
+		background: $primary;
+		color: white;
+		text-align: left;
+		margin-top: 30px;
+		width: max-content;
+		font-size: 24px;
 	}
 
 	p {
-		opacity: 0.64;
 		text-align: left;
 		width: 75%;
-		margin: auto;
 	}
 }
 
 
-$primary: #6cbd45;
 
 #footer {
 	@media (min-width: 768px){
@@ -98,7 +111,7 @@ $primary: #6cbd45;
 	height: 20px;
 	width: 100vw;
 	background: $primary;
-	margin-top: 30px;
+	margin-top: 100px;
 }
 
 .arrow {
@@ -238,6 +251,10 @@ nav.desktop, .sidebar-mobile .content {
 		@media (min-width: 1200px) {
 			width: calc(100vw - 276px);
 		}
+
+		@media (max-height: 768px) {
+			max-height: 100vh;	
+		}
 		// footer {
 		// 	content: "";
 		// 	height: 46px;
@@ -315,11 +332,11 @@ nav.desktop, .sidebar-mobile .content {
 			width: max-content;
 			color: white;
 			padding: 0 15px;
-			font-size: 3.5rem;
+			font-size: 49px;
 		}
 
 		p {
-			font-size: 26px;
+			font-size: 22px;
 		}
 	}
 
@@ -535,6 +552,9 @@ nav.desktop, .sidebar-mobile .content {
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
+		@media (max-width: 768px) {
+			justify-content: space-between;
+		}
 		.arrow {
 			margin: 30px;
 		}
@@ -568,11 +588,13 @@ nav.desktop, .sidebar-mobile .content {
 		// }
 		margin: auto;
 		overflow: hidden;
+		@media (max-width: 768px) {
+			width: 500px;
+		}
 		.slider {
-
 			.slider-item {
 				@media (max-width: 1600px) {
-					// margin: 0 60px;	
+					margin: 0 60px;	
 				}
 			}
 			* {
@@ -690,6 +712,9 @@ nav.desktop, .sidebar-mobile .content {
 				}
 				.arrow {
 					margin: 30px;
+					@media (max-width: 768px) {
+						margin: 5px;	
+					}
 				}
 			}
 
@@ -872,6 +897,7 @@ nav.desktop, .sidebar-mobile .content {
 }
 
 #blog {
+	min-height: calc(100vh - 285px);
 	margin: auto;
 	text-align: center;
 	padding: 50px 100px;
@@ -972,7 +998,7 @@ nav.desktop, .sidebar-mobile .content {
 		.message {
 			color: #c4c4c4;
 			margin-bottom: 20px;
-
+			background: none;
 		}
 		margin: auto;
 		width: 30vw;
