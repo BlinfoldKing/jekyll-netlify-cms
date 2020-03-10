@@ -1,8 +1,8 @@
 ---
-name: BTPN
-image: /img/uploads/rectangle-32.png
-description: Ini bank BTPN
+name: Telkom Property
+image: /img/uploads/frame-4.png
+description: Telkom Property
 gallery:
   - title: Gambar 1
-    image: /img/uploads/random1.png
+    image: /img/uploads/3d-kantor-smart-office-telkom-balikpapan-1-.jpg
 ---
