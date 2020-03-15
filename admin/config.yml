@@ -107,6 +107,7 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Description", name: description, widget: markdown}
           - label: "Mechanical and Electric"
             name: mechanical
+            widget: list
             fields:
               - {label: "Image", name: image, widget: image}
               - {label: "Description", name: description, widget: markdown}
