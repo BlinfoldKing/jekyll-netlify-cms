@@ -1,8 +1,8 @@
 ---
-name: BTPN
-image: /img/uploads/rectangle-32.png
-description: Ini bank BTPN
+name: Kelly Services
+image: /img/uploads/rectangle-24.png
+description: Kelly Services
 gallery:
   - title: Gambar 1
-    image: /img/uploads/random1.png
+    image: /img/uploads/3d-image-kelly-services-mayapada-_-lt.-6-5-.jpg
 ---
