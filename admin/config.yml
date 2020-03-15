@@ -83,10 +83,10 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Office Hour", name: office_hour, widget: string}
           - {label: "Facebook", name: office_hour, widget: string}
           - {label: "Instagram", name: office_hour, widget: string}
-       - label: "Service Page"
-         name: "service"
-         file: "_data/sevice.yml"
-         fields:
+      - label: "Service Page"
+        name: "service"
+        file: "_data/sevice.yml"
+        fields:
           - label: "Interior and  Civil Works"
             name: civil
             fields:
