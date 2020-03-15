@@ -89,16 +89,19 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - label: "Interior and  Civil Works"
             name: civil
+            widget: list
             fields:
               - {label: "Image", name: image, widget: image}
               - {label: "Description", name: description, widget: markdown}
           - label: "Design and Build"
             name: build
+            widget: list
             fields:
               - {label: "Image", name: image, widget: image}
               - {label: "Description", name: description, widget: markdown}
           - label: "Furnitur"
             name: furnitur
+            widget: list
             fields:
               - {label: "Image", name: image, widget: image}
               - {label: "Description", name: description, widget: markdown}
@@ -109,11 +112,13 @@ collections: # A list of collections the CMS should be able to edit
               - {label: "Description", name: description, widget: markdown}
           - label: "Architecture"
             name: architecture
+            widget: list
             fields:
               - {label: "Image", name: image, widget: image}
               - {label: "Description", name: description, widget: markdown}
           - label: "Artwork"
             name: art
+            widget: list
             fields:
               - {label: "Image", name: image, widget: image}
               - {label: "Description", name: description, widget: markdown}
