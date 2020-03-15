@@ -83,4 +83,37 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Office Hour", name: office_hour, widget: string}
           - {label: "Facebook", name: office_hour, widget: string}
           - {label: "Instagram", name: office_hour, widget: string}
-    
+       - label: "Service Page"
+         name: "service"
+         file: "_data/sevice.yml"
+         fields:
+          - label: "Interior and  Civil Works"
+            name: civil
+            fields:
+              - {label: "Image", name: image, widget: image}
+              - {label: "Description", name: description, widget: markdown}
+          - label: "Design and Build"
+            name: build
+            fields:
+              - {label: "Image", name: image, widget: image}
+              - {label: "Description", name: description, widget: markdown}
+          - label: "Furnitur"
+            name: furnitur
+            fields:
+              - {label: "Image", name: image, widget: image}
+              - {label: "Description", name: description, widget: markdown}
+          - label: "Mechanical and Electric"
+            name: mechanical
+            fields:
+              - {label: "Image", name: image, widget: image}
+              - {label: "Description", name: description, widget: markdown}
+          - label: "Architecture"
+            name: architecture
+            fields:
+              - {label: "Image", name: image, widget: image}
+              - {label: "Description", name: description, widget: markdown}
+          - label: "Artwork"
+            name: art
+            fields:
+              - {label: "Image", name: image, widget: image}
+              - {label: "Description", name: description, widget: markdown}
