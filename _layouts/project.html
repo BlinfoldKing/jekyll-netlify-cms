@@ -4,9 +4,13 @@ layout: default
 
 <div id="project">
     <p class="text">
-        <h2 class="title is-5">Projects</h2>
-        <p>
+        <h2 class="en title is-5">Projects</h2>
+        <h2 class="id title is-5">Proyek</h2>
+        <p class="en">
             Here our collection of clients project
+        </p>
+        <p class="id">
+            Berikut koleksi proyek kami untuk client
         </p>
         <div class="gallery">
             <div class="arrow disabled prev" id="prev" onclick="carousels[0].previous()">
@@ -15,7 +19,7 @@ layout: default
             <div class="featured carousel">
 
                 {% for gallery in site.galleries %}
-                <div class="project-card item-{{ forloop.index }}">
+                <div class="item-{{ forloop.index }}">
                     <img src="{{ gallery.image }}" alt="">
                 </div>
                 {% endfor %}
@@ -97,7 +101,7 @@ layout: default
                                 <div class="client-{{ forloop.index }} carousel">
 
                                     {% for gallery in client.gallery %}
-                                    <div class="project-card item-{{ forloop.index }}">
+                                    <div class="item-{{ forloop.index }}">
                                         <img src="{{ gallery.image }}" alt="">
                                     </div>
                                     {% endfor %}
@@ -198,7 +202,8 @@ layout: default
 
                                         {% for gallery in client.gallery %}
                                         <div class="project-card item-{{ forloop.index }}">
-                                            <img src="{{ gallery.image }}" alt="">
+                                            <img src="{{ gallery.image }}" alt="" class="project-card"
+                                                style="">
                                         </div>
                                         {% endfor %}
 

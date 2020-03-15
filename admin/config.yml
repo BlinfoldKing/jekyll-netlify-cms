@@ -44,7 +44,7 @@ collections: # A list of collections the CMS should be able to edit
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Image, name: image, widget: image}
-  - label: "Page Text"
+  - label: "Page Content"
     name: "pages"
     files:
       - label: "Home Page"
@@ -55,9 +55,32 @@ collections: # A list of collections the CMS should be able to edit
           - {label: "Title (en)", name: title_en, widget: string}
           - {label: "Description (id)", name: desc_id, widget: markdown}
           - {label: "Description (en)", name: desc_en, widget: markdown}
-      - label: "Company Page"
+      - label: "About Page"
         name: "company"
         file: "_data/company.yml"
         fields:
           - {label: "Description (id)", name: desc_id, widget: markdown}
           - {label: "Description (en)", name: desc_en, widget: markdown}
+          - {label: "Visi (en)", name: visi_id, widget: markdown}
+          - {label: "Visi (id)", name: visi_en, widget: markdown}
+          - {label: "Misi (en)", name: misi_id, widget: markdown}
+          - {label: "Misi (id)", name: misi_id, widget: markdown}
+          - {label: "Team Desc (id)", name: team_id, widget: markdown}
+          - {label: "Team Desc (en)", name: team_en, widget: markdown}
+          - label: "Team Member"
+            name: "member"
+            widget: list
+            fields:
+              - {label: "Name", name: name, widget: string}
+              - {label: "Quote", name: quote, widget: markdown}
+          - {label: "Group Image", name: group, widget: image}
+      - label: "Contact Page"
+        name: "contact"
+        file: "_data/contact.yml"
+        fields:
+          - {label: "Location", name: lokasi, widget: string}
+          - {label: "Studio Hour", name: office_hour, widget: string}
+          - {label: "Office Hour", name: office_hour, widget: string}
+          - {label: "Facebook", name: office_hour, widget: string}
+          - {label: "Instagram", name: office_hour, widget: string}
+    

@@ -3,17 +3,17 @@
         <img src="/assets/dimensilogo1.png" alt="" style="width: 120px;">
     </div>
     <div class="id">
-        <a id="home-link" class="home-link" href="/">Home</a>
-        <a id="about-link" class="about-link" href="/about">Company</a>
-        <a id="services-link" class="services-link" href="/services">Service</a>
-        <a id="project-link" class="project-link" href="/project">Projects</a>
+        <a id="home-link" class="home-link" href="/">Beranda</a>
+        <a id="about-link" class="about-link" href="/about">Tentang</a>
+        <a id="services-link" class="services-link" href="/services">Layanan</a>
+        <a id="project-link" class="project-link" href="/project">Proyek</a>
         <a id="blog-link" class="blog-link" href="/blog">Blog</a>
         <!-- <a id="career-link" href="/career">Career</a> -->
-        <a id="contact-link" href="/contact">Contact</a>
+        <a id="contact-link" href="/contact">Kontak</a>
     </div>
     <div class="en">
         <a id="home-link" class="home-link" href="/?lang=en">Home</a>
-        <a id="about-link" class="about-link" href="/about?lang=en">Company</a>
+        <a id="about-link" class="about-link" href="/about?lang=en">About</a>
         <a id="services-link" class="services-link" href="/services?lang=en">Service</a>
         <a id="project-link" class="project-link" href="/project?lang=en">Projects</a>
         <a id="blog-link" class="blog-link" href="/blog?lang=en">Blog</a>
@@ -36,15 +36,25 @@
     let { pathname } = document.location
     if (pathname === '/') {
         document.getElementsByClassName("home-link")[0].classList.add("is-active")
+        document.getElementsByClassName("home-link")[1].classList.add("is-active")
+        document.getElementsByClassName("home-link")[2].classList.add("is-active")
+        document.getElementsByClassName("home-link")[3].classList.add("is-active")
         document.getElementById("home-link").classList.add("is-active")
+        document.getElementById('footer').classList.add('hide')
     } else if (pathname.includes("blog")) {
         document.getElementsByClassName(`blog-link`)[0].classList.add("is-active")
+        document.getElementsByClassName(`blog-link`)[1].classList.add("is-active")
+        document.getElementsByClassName(`blog-link`)[2].classList.add("is-active")
+        document.getElementsByClassName(`blog-link`)[3].classList.add("is-active")
         document.getElementById(`blog-link`).classList.add("is-active")
     } else {
         pathname = pathname.replace("/", "")
         pathname = pathname.replace("/", "")
 
         document.getElementsByClassName(`${pathname}-link`)[0].classList.add("is-active")
+        document.getElementsByClassName(`${pathname}-link`)[1].classList.add("is-active")
+        document.getElementsByClassName(`${pathname}-link`)[2].classList.add("is-active")
+        document.getElementsByClassName(`${pathname}-link`)[3].classList.add("is-active")
         document.getElementById(`${pathname}-link`).classList.add("is-active")
     }
 </script>

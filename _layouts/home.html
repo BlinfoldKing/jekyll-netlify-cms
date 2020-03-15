@@ -6,35 +6,64 @@ layout: default
     document.querySelector('.circle').classList.add("hide")
 </script>
 
-<img src="/assets/circle.png" class="circle-home" alt="">
 <div id="home">
     <div class="top-content">
         <div class="main">
-            <div class="text">
+            <div class="content">
+                <div class="text">
+                    <section class="section">
+                        <div class="container">
+                            <!-- Start Carousel -->
+                            <div id="carousel-demo" class="carousel">
+                                <div class="item-1">
+                                    <img src="/assets/home1.png" alt="">
+                                </div>
+                                <div class="item-2">
+                                    <img src="/assets/home2.png" alt="">
+                                </div>
+                                <div class="item-3">
+                                    <img src="/assets/home3.png" alt="">
+                                </div>
+                            </div>
+                            <!-- End Carousel -->
+                        </div>
+                    </section>
 
+                    <script
+                        src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+                    <script>
+                        bulmaCarousel.attach('#carousel-demo', {
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            autoplay: true,
+                            autoplaySpeed: 2000,
+                            loop: true,
+                            navigation: false,
+                            effect: 'fade',
+                        });
+                    </script>
+                </div>
+                <div class="desc">
+                    <h1 class="title is-1 id">
+                        {{ site.data.home.title_id }}
+                    </h1>
+                    <h1 class="title is-1 en">
+                        {{ site.data.home.title_en }}
+                    </h1>
+
+                    <p class="id">
+                        {{ site.data.home.desc_id }}
+                    </p>
+
+                    <p class="en">
+                        {{ site.data.home.desc_en }}
+                    </p>
+                </div>
             </div>
-            <div class="desc">
-                <h1 class="title is-1 id">
-                    {{ site.data.home.title_id }}
-                </h1>
-                <h1 class="title is-1 en">
-                    {{ site.data.home.title_en }}
-                </h1>
-
-                <p class="id">
-                    {{ site.data.home.desc_id }}
-                </p>
-
-                <p class="en">
-                    {{ site.data.home.desc_en }}
-                </p>
-            </div>
-
         </div>
 
         <div class="images-h">
-            <div class="bg1"></div>
-            <div class="bg2"></div>
+            <img src="/assets/decordimensi.png" alt="">
         </div>
     </div>
 </div>
