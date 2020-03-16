@@ -8,6 +8,36 @@
 
 $primary: #6cbd45;
 
+.mobile-decor {
+	position: fixed;
+	right: 0;
+	bottom: -5px;
+	padding: 0 !important;
+}
+
+.link-button {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	display: block;
+	padding: 10px 20px;
+	width: fit-content;
+	text-align: auto;
+	border: solid 2px #4f4842;
+	color: #4f4842;
+	border-radius: 30px;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+	
+	&:hover, &.hover {
+		color: white;
+		background: #4f4842;
+	}
+
+	&.mobile {
+		padding: 5px 10px;
+		margin-bottom: 60px;
+	}
+}
+
 .body-container {
 	@media (min-width: 1200px) {
 		overflow: scroll;
@@ -173,6 +203,7 @@ table {
 	img {
 		z-index: 2;
 		position: relative;
+		width: 100%;
 	}
 	@media (min-width: 1200px) {
 		display: none;
@@ -182,21 +213,23 @@ table {
 	text-align: center;
 	div {
 		padding: 0 10vw;
+		text-align: justify;
 		margin: auto;
 	}
 
 	h1 {
-		background: $primary;
-		color: white;
+		color: #7a7a7a;
 		text-align: left;
 		margin-top: 30px;
-		width: max-content;
-		font-size: 24px;
+		width: fit-content;
+		font-size: 26px;
 	}
 
+	
+
 	p {
-		text-align: left;
-		width: 75%;
+		color: #404040;
+		text-align: justify;
 	}
 }
 
@@ -241,6 +274,7 @@ a {
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 15px;
+	padding: 15px 25px;
 	.menu {
 		i {
 			font-size: 30px;
@@ -419,11 +453,13 @@ nav.desktop, .sidebar-mobile .content {
 		h1 {
 			font-weight: normal;
 			width: max-content;
-			font-size: 49px;
+			font-size: 36px;
 		}
 
 		p {
-			font-size: 22px;
+			font-size: 18px;
+			max-width: 744px;
+			text-align: justify;
 		}
 
 		.content {
@@ -538,6 +574,7 @@ nav.desktop, .sidebar-mobile .content {
 
 	.description {
 		display: flex;
+		text-align: justify;
 		@media (max-width: 768px) {
 			flex-direction: column;	
 		}
@@ -557,6 +594,10 @@ nav.desktop, .sidebar-mobile .content {
 		img {
 			min-width: 62px;
 			height: 62px;
+			@media (max-width: 768px) {
+				height: 40px;
+				min-width: 40px;
+			}
 		}
 	}
 
@@ -567,6 +608,7 @@ nav.desktop, .sidebar-mobile .content {
 			flex-direction: column;	
 			.judul {
 				margin: auto !important;
+				margin-bottom: 30px !important;
 			}
 		}
 
@@ -576,6 +618,7 @@ nav.desktop, .sidebar-mobile .content {
 			margin: auto;
 			li {
 				margin: 30px 0;
+				margin-top: 0;
 			}
 		}
 		display: flex;
@@ -597,9 +640,13 @@ nav.desktop, .sidebar-mobile .content {
 	}
 
 	.team {
+		.judul {
+			margin-bottom: 15px;
+		}
+
 		.desc {
 			display: flex;
-			margin-bottom: 30px;
+			margin-bottom: 60px;
 			text-align: justify;
 			margin-right: 30px;
 			@media (max-width: 768px) {
@@ -611,12 +658,15 @@ nav.desktop, .sidebar-mobile .content {
 				height: 100px !important;
 				@media (max-width: 768px) {
 					margin: auto;
+					width: 60px !important;
+					height: 60px !important;
 				}
 			}
 		}
 
 }
 	.people {
+		margin: 60px auto;
 		display: flex;
 		align-items: center;
 		max-width: 900px;
@@ -648,6 +698,9 @@ nav.desktop, .sidebar-mobile .content {
 
 			.nama {
 				font-size: 18px;
+				@media (max-width: 768px) {
+					text-align: center;
+				}
 			}
 
 			.quote {
@@ -731,11 +784,25 @@ nav.desktop, .sidebar-mobile .content {
 		text-align: left;
 
 		.numbers {
-
+			div {
+				display: inline-block;
+			}	
 			margin: 15px;
 			@media (min-width: 768px) {
 				margin: 0 70px;
+				margin-right: 0;
 			}
+			
+			@media (max-width: 768px) {
+				margin: auto;
+				div {
+					padding-bottom: 5px;
+				}
+				strong {
+					display: none;
+				}
+			}
+			padding: 0;
 			// padding: 60px 0;
 			padding-bottom: 30px ;
 		}
@@ -783,7 +850,7 @@ nav.desktop, .sidebar-mobile .content {
 
 #project {
 	padding-top: 5vh;
-
+	padding-bottom: 5vh;
 
 	.gallery {
 		max-width: 100vw;
@@ -832,13 +899,14 @@ nav.desktop, .sidebar-mobile .content {
 		.slider {
 			min-width: 400px;
 			.slider-item {
+				height: 250px;
+				border-right: solid 2px $primary;
 				@media (max-width: 1200px) {
 					margin: 0;	
 
 				}
 
 				img {
-					border: solid red 1px;
 					height: 250px;
 					width: 400px;
 					@media (max-width: 768px) {
@@ -846,10 +914,7 @@ nav.desktop, .sidebar-mobile .content {
 					}
 				}
 			}
-			* {
-
-				border: none  !important;
-			}
+			
 			padding: 60px 0;
 			&::after {
 				border: none  !important;
@@ -888,6 +953,8 @@ nav.desktop, .sidebar-mobile .content {
 		p {
 			margin: auto;
 		}
+
+		margin-bottom: 60px;
 		
 		.fa-chevron-down {
 			color: $primary;
@@ -942,6 +1009,10 @@ nav.desktop, .sidebar-mobile .content {
 			.header {
 				display: flex;
 				justify-content: space-between;
+
+				.logo {
+					margin-bottom: 30px;
+				}
 			}
 
 			
@@ -1032,6 +1103,57 @@ nav.desktop, .sidebar-mobile .content {
 }
 
 #service {
+	.modal {
+
+		.modal-content {
+			background: white;
+
+			.top {
+				display: flex;
+				justify-content: space-between;
+				@media (max-width: 768px) {
+					justify-content: center;	
+					padding: 0 !important;
+				}
+			}	
+
+			.fa-times {
+				position: absolute;
+				top: 30px;
+				right: 30px;
+				@media (max-width: 768px) {
+					top: 10px;
+					right: 10px;
+				}
+			}
+
+			width: 50vw;
+			@media (max-width: 768px) {
+				padding: 5vw !important;
+				width: 70vw;
+			}
+
+			@media (max-width: 768px) {
+				padding-top: 30px !important;	
+			}
+
+			.image {
+				padding: 15px !important;
+				img {
+					@media (min-height: 768px) {
+						height: 300px;
+						object-fit: contain;
+						min-height: 100%;
+					}
+				}
+			}
+
+			p {
+				padding: 20px;
+				text-align: justify;
+			}
+		}
+	}
 	@media (max-width: 1200px) {
 		margin: auto;
 		width: 100vw;
@@ -1074,6 +1196,10 @@ nav.desktop, .sidebar-mobile .content {
 		.project-card {
 			margin: 15px 30px;
 			position: relative;
+			&:hover {
+				box-shadow: 0px 4px 4px $primary;
+				cursor: pointer;
+			}
 			img {
 				height: 200px;
 				object-fit: cover;
@@ -1094,8 +1220,16 @@ nav.desktop, .sidebar-mobile .content {
 				padding: 30px;
 				padding-top: 15px;
 			}
+
+			a {
+				&:hover {
+					color: white;
+				}
+			}
 		}
 	}
+
+	margin-bottom: 30px !important;
 }
 
 #career {
@@ -1166,8 +1300,6 @@ nav.desktop, .sidebar-mobile .content {
 }
 
 #blog {
-	min-height: calc(100vh - 285px);
-	margin: auto;
 	text-align: center;
 	padding: 50px 100px;
 	padding-bottom: 0;
@@ -1185,19 +1317,42 @@ nav.desktop, .sidebar-mobile .content {
 		border-bottom: solid 3px $primary;
 		margin-bottom: 50px;
 		margin-top: 60px;
+		font-size: 20px;
+	}
+
+	.text {
+		@media (max-width: 768px) {
+			p {
+				margin: auto;
+				width: 250px;
+				text-align: center;
+			}
+		}
 	}
 
 	.post-list {
-		margin: 0 10vw;
+		margin: 30px 10vw;
 		.row {
 			justify-content: space-between;
-
 		}
+
+		li:hover {
+			.title:not(.excerpt) {
+				border-bottom: $primary 2px solid ;
+				max-width: fit-content;
+			}
+		}
+
 		li {
+			margin: auto;
 			padding: 30px;
 			@media (min-width: 768px) {
 				width: 30vw;
-				margin: auto;
+			}
+
+			@media (max-width: 768px) {
+				margin-left: 30px;
+				margin-right: 30px;
 			}
 			border-top: solid 1px #eee;
 			display: flex;
@@ -1222,9 +1377,34 @@ nav.desktop, .sidebar-mobile .content {
 				}
 
 				.title {
-					color: #7a7a7a;
+					margin-top: 0;
+					margin-bottom: 0;
+					color: #000;
+					opacity: 0.7;
+					font-size: 16px;
+					font-weight: normal;
 					margin-top: 10px;
+					@media (max-width: 768px) {
+						font-size: 11px;	
+					}
+
 				}
+					.excerpt {
+						opacity: 0.5;
+						font-size: 14px;
+						@media (max-width: 768px) {
+							font-size: 9px;	
+						}
+						* {
+							white-space: nowrap;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							width: 120px;
+							@media (min-width: 768px) {
+								width: 300px;	
+							}
+						}
+					}
 				margin-right: 30px;
 			}
 		}
@@ -1233,13 +1413,14 @@ nav.desktop, .sidebar-mobile .content {
 			.row {
 				flex-direction: column;
 				li {
+					margin: auto;
 					justify-content: start;
 					&:last-child {
 						padding-top: 30px;
 					}
 				}
 			}
-			margin: 0;
+			margin: 30px 0;
 			padding: 0;
 			font-size: 14px;
 		}
@@ -1285,6 +1466,9 @@ nav.desktop, .sidebar-mobile .content {
 	text-align: auto;
 	padding: 100px 10vw;
 	@media (max-width: 768px) {
+		padding-top: 60px !important;	
+	}
+	@media (max-width: 768px) {
 		font-size: 14px;
 	}
 	.title {
@@ -1294,19 +1478,25 @@ nav.desktop, .sidebar-mobile .content {
 		width: max-content;
 		margin: auto;
 		padding: 3px 10px;
+		font-size: 24px;
 	}
 
 	.subtitle {
 		text-align: center;
 		margin: 15px;
+		font-size: 14px;
 	}
 
 	img {
 		display: block;
 		margin: 30px auto;
 		min-width: 500px;
+		min-width: 700px;
+		height: 500px;
+		object-fit: cover;
 		@media (max-width: 768px) {
 			min-width: 100px;
+			height: 200px;
 		}
 	}
 
@@ -1328,4 +1518,14 @@ iframe {
 .line {
 	color: #00000000;
 	border-bottom: solid 2px $primary;
+}
+
+#date {
+	display: inline-block;
+}
+
+#show-more-client, .arrow {
+	&:hover {
+		transform: scale(1.2);
+	}
 }

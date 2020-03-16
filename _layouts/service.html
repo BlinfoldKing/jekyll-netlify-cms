@@ -3,6 +3,15 @@ layout: default
 ---
 
 <div id="service">
+    <script>
+        const openService = (str) => {
+            document.getElementById(str).classList.add("is-active")
+        }
+
+        const closeService = (str) => {
+            document.getElementById(str).classList.remove("is-active")
+        }
+    </script>
     <div class="content">
         <h2 class="title is-5">Services</h2>
         <p>We provide solution-fit services to fulfill our commitment to our clients</p>
@@ -10,10 +19,29 @@ layout: default
     <div class="featured">
         <div class="project-card">
             <img src="/assets/service-1.png" alt="">
-            <div class="overlay"></div>
-            <div>
+            <div class="overlay" onclick="openService('serv-1')"></div>
+            <div onclick="openService('serv-1')">
                 <p>Build Interior and Civil Works</p>
                 <a href="" class="line">Lorem Ipsum</a>
+            </div>
+            <div class="modal" id="serv-1">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="top">
+                        <a href="">Interior & Sipil</a>
+                        <i class="fas fa-times" onclick="closeService('serv-1')">
+                        </i>
+                    </div>
+                    <div class="image">
+                        <img src="/assets/gambar.png" alt="">
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Facilisi libero in ut feugiat feugiat.
+                        Vel velit fermentum in sed faucibus facilisi non sem ut. Pulvinar blandit porttitor nisl diam
+                        adipiscing faucibus sagittis. Ornare mi eu lacus, volutpat ut arcu senectus neque. Id diam
+                        turpis condimentum risus quis pharetra porttitor montes. Risus ornare laoreet orci fermentum.
+                    </p>
+                </div>
             </div>
         </div>
         <div class="project-card">

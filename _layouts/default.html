@@ -20,7 +20,7 @@
 <body>
     <div class="navbar-mobile">
         <div>
-            <img src="/assets/dimensilogo.png" alt="">
+            <img style="width: 60px; height: 60px;" src="/assets/logodimensibaru.png" alt="">
         </div>
         <div class="menu" onclick="showSidebar()">
             <i class="fas fa-bars"></i>
@@ -31,7 +31,7 @@
         </div>
         <div class="content">
             <div id="close" onclick="closeSidebar()">
-                <i class="fas fa-times"></i>
+                <img src="/assets/menu.svg" alt="">
             </div>
             <div class="id">
                 <a id="home-link" class="home-link" href="/">Beranda</a>
@@ -116,8 +116,9 @@
         if (window.innerWidth >= 1200) {
             revealer.reveal('#home *', opts)
             revealer.reveal('#company ', opts)
-            revealer.reveal('#service *', opts)
+            revealer.reveal('#service', opts)
             revealer.reveal('#blog *')
+            revealer.reveal('#posts *')
             revealer.reveal('#project ')
             revealer.reveal('#contact *')
     

@@ -7,10 +7,95 @@ layout: default
         {{page.title}}
     </h2>
     <div class="subtitle">
-        {{page.categories[0]}} | {{page.date | split: " " | first}}
+        {{page.categories[0]}} |
+        <div id="date">
+            <!-- {{page.date | split: " " | first}} -->
+        </div>
     </div>
     <img src="{{page.thumbnail}}" alt="">
-    <div class="content">
+    <div class="content" style="font-size: 16px;">
         {{content}}
     </div>
 </div>
+
+
+<script>
+    const dayName = {
+        id: ['Senin',
+            'Selasa',
+            'Rabu',
+            'Kamis',
+            'Jumat',
+            'Sabtu',
+            'Minggu',
+        ],
+        en: ['Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+            'Sunday',
+        ]
+    }
+
+    const monthName = [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Des',
+    ];
+
+    const formatDate = (timestamp, lang) => {
+        if (!timestamp) {
+            return '';
+        }
+
+
+        const datetime = timestamp
+
+        const day = dayName[lang][datetime.getDay() - 1];
+        const month = monthName[datetime.getMonth()];
+
+        // eslint-disable-next-line func-names
+        const date = (function () {
+            const d = datetime.getDate();
+            const lastdigit = d % 100;
+            if (lastdigit === 11 || lastdigit === 12 || lastdigit === 13) {
+                return `${d}th`;
+            }
+            switch (lastdigit) {
+                case 1:
+                    return `${d}st`;
+                case 2:
+                    return `${d}nd`;
+                case 3:
+                    return `${d}rd`;
+                default:
+                    break;
+            }
+
+
+            return `${d}th`;
+        }());
+
+
+        const year = datetime.getUTCFullYear();
+        return `${day}, ${month} ${date} ${year}`;
+    };
+
+    const attachDate = (str) => {
+        const d = new Date(str)
+        document.getElementById("date").innerHTML = formatDate(d, "en")
+    }
+
+    attachDate('{{ page.date }}')
+</script>
