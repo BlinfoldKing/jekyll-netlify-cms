@@ -465,6 +465,9 @@ nav.desktop, .sidebar-mobile .content {
 		.content {
 			padding: 100px;
 			padding-top: 150px;
+			@media (max-width: 1800px) {
+				padding-top: 100px;
+			}
 		}
 	}
 
